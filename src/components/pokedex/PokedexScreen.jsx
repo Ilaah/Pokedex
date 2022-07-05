@@ -63,7 +63,7 @@ const PokedexScreen = ({ darkMode, toggleVisualMode }) => {
 
     let arrayPages = []
     let quantityPages = Math.ceil(pokemons?.length / pokemonsPerPage)
-    const pagesPerBlock = 6
+    const pagesPerBlock = 5
     let currentBlock = Math.ceil(currentPage / pagesPerBlock)
     if (currentBlock * pagesPerBlock >= quantityPages) {
         for (let i = currentBlock * pagesPerBlock - pagesPerBlock + 1; i <= quantityPages; i++) {
@@ -96,7 +96,7 @@ const PokedexScreen = ({ darkMode, toggleVisualMode }) => {
                 quantityPages={quantityPages}
                 pagesPerBlock={pagesPerBlock}
             />
-            <section className='pokecards'>
+            <section className='pokecards animate__fadeInLeft'>
                 {filterPokemon ?
                     filterPokemon?.map(pokemon => (
                         <PokeCard

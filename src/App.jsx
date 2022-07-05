@@ -10,23 +10,26 @@ import SpecificPokémon from './components/pokedex/SpecificPokémon'
 function App() {
 
   //darkMode
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   const toggleVisualMode = () => {
     setDarkMode(!darkMode)
   }
 
   return (
-    <div className= {darkMode ? 'App-dark' : 'App'}>
+    <div className={darkMode ? 'App-dark' : 'App'}>
       <Routes>
-        <Route path= '/' element={<Home />} />
-        <Route path= '/pokedex' element={<PokedexScreen
-        darkMode={darkMode}
-        toggleVisualMode={toggleVisualMode}
-        />}/>
+        <Route path='/' element={<Home
+          darkMode={darkMode}
+          toggleVisualMode={toggleVisualMode}
+        />} />
+        <Route path='/pokedex' element={<PokedexScreen
+          darkMode={darkMode}
+          toggleVisualMode={toggleVisualMode}
+        />} />
         <Route path='/pokedex/:name' element={<SpecificPokémon
-        darkMode={darkMode}
-        toggleVisualMode= {toggleVisualMode}
+          darkMode={darkMode}
+          toggleVisualMode={toggleVisualMode}
         />} />
       </Routes>
     </div>

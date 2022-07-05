@@ -22,10 +22,12 @@ const Login = () => {
     }
 
     return (
-            <form onSubmit={handleSubmit(submit)} className= 'login'>
-                <input placeholder='Type your trainer name' type="text"  {...register('nameUser')}  className= 'login__input'/>
-                <button className= 'login__btn'>▶</button>
-            </form>
+        <form onSubmit={handleSubmit(submit)} className='login'>
+            <div className='login__form'>
+                <input placeholder='Type your trainer name' type="text"  {...register('nameUser')} className='login__input' />
+                <button className='login__btn'>▶</button>
+            </div>
+        </form>
     )
 }
 

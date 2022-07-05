@@ -47,7 +47,7 @@ const PokeCard = ({ url, darkMode }) => {
 
 
   return (
-    <article className={`pokecard ${filterTypePokemon()}`} onClick= {clickCard}>
+    <article className={`pokecard animate__fadeInLeft ${filterTypePokemon()}`} onClick= {clickCard}>
       <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="pokemon" className='pokecard__img' />
       
       <div className={darkMode ? 'pokecard__info-dark' : 'pokecard__info-light'}>

@@ -23,17 +23,19 @@ const Pagination = ({ arrayPages, currentPage, setCurrentPage, quantityPages, pa
     const selectPage = n => setCurrentPage(n)
 
     return (
-        <div className='pagination__container'>
-            <button onClick={prevPage} className='pagination__prev-next'>‹</button>
+        <div className={ darkMode ? 'pagination__container-dark animate__fadeInDown' : 'pagination__container-light animate__fadeInDown' }>
+            <button onClick={prevPage} className={ darkMode ? 'pagination__prev-dark' : 'pagination__prev-light' }>‹</button>
             <ul className='pagination__number-container'>
                 {
 
                     arrayPages?.map(num => (
-                        <li onClick={() => selectPage(num)} key={num} className={currentPage == num ? 'page-number page-active' : 'page-number'}>{num}</li>
+                        <li onClick={() => selectPage(num)} key={num} className={(currentPage == num ?
+                            darkMode ? 'page-number page-active-dark' :
+                            'page-number page-active-light' : 'page-number')}>{num}</li>
                     ))
                 }
             </ul>
-            <button onClick={nextPage} className='pagination__prev-next'>›</button>
+            <button onClick={nextPage} className={ darkMode ? 'pagination__next-dark' : 'pagination__next-light' }>›</button>
         </div>
     )
 }

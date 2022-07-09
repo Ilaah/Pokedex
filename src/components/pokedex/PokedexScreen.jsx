@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import PokeCard from './PokeCard'
-import Header from '../home/Header'
+import Header from '../Shared/Header'
 import Pagination from '../Pagination'
-import Footer from '../home/Footer'
+import Footer from '../Shared/Footer'
 import Form from './Form'
 import axios from 'axios'
 

@@ -10,8 +10,13 @@
   --dark-icons-color: rgb(65, 75, 123);
 
   --default-color-card: rgba(194, 172, 143, 0.656);
+  --normal-color-card: rgba(160, 157, 157, 0.623);
+  --fighting-color-card: rgba(235, 83, 33, 0.615);
   --poison-color-card: rgba(64, 32, 118, 0.638);
   --rock-color-card: rgba(121, 51, 28, 0.615);
+  --bug-color-card: rgba(120, 120, 51, 0.66);
+  --steel-color-card: rgba(100, 100, 100, 0.66);
+  --psychic-color-card: rgba(180, 110, 149, 0.66);
   --ghost-color-card: rgba(91, 28, 122, 0.636);
   --fire-color-card: rgba(203, 133, 3, 0.741);
   --water-color-card: rgba(71, 87, 211, 0.63);
@@ -86,12 +91,16 @@ body::-webkit-scrollbar-thumb {
 
 .login {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 30px;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .login__form {
+  margin-top: 10px;
   width: min(75%, 400px);
   display: flex;
   flex-direction: row;
@@ -125,6 +134,12 @@ body::-webkit-scrollbar-thumb {
 .login__btn:active {
   background-color: var(--titles-color-text);
   color: #ffffff;
+}
+
+.login__error {
+  color: var(--titles-color-text);
+  font-size: 14px;
+  font-style: italic;
 }
 
 .header-light,
@@ -167,9 +182,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @keyframes rotar {
-  from{transform: rotate(90deg);}
+  from {
+    transform: rotate(90deg);
+  }
 
-  to{transform: rotate(10deg);}
+  to {
+    transform: rotate(10deg);
+  }
 }
 
 .icon-dark {
@@ -444,8 +463,13 @@ body::-webkit-scrollbar-thumb {
 
 .default,
 .poison,
+.normal,
+.fighting,
 .ghost,
 .rock,
+.bug,
+.steel,
+.psychic,
 .fire,
 .water,
 .grass,
@@ -462,6 +486,16 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, rgba(200, 193, 200, 0.663) 0%, rgb(218, 195, 130) 100%);
 }
 
+.normal {
+  color: var(--normal-color-card);
+  background: linear-gradient(180deg, rgba(179, 176, 176, 0.611) 15%, rgb(57, 56, 56) 88%);
+}
+
+.fighting {
+  color: var(--fighting-color-card);
+  background: linear-gradient(180deg, rgba(255, 92, 92, 0.637) 15%, rgba(60,0,0,1) 88%);
+}
+
 .poison {
   color: var(--poison-color-card);
   background: linear-gradient(180deg, rgba(180, 111, 244, 0.6) 15%, rgba(0, 7, 78, 1) 88%);
@@ -470,6 +504,21 @@ body::-webkit-scrollbar-thumb {
 .rock {
   color: var(--rock-color-card);
   background: linear-gradient(180deg, rgba(161, 116, 9, 0.623) 11%, rgb(42, 38, 2) 100%);
+}
+
+.bug {
+  color: var(--bug-color-card);
+  background: linear-gradient(180deg, rgba(206, 255, 92, 0.67) 23%, rgba(57,60,0,1) 89%);
+}
+
+.steel {
+  color: var(--steel-color-card);
+  background: linear-gradient(180deg, rgba(220, 222, 217, 0.774) 23%, rgba(61,68,80,1) 89%);
+}
+
+.psychic {
+  color: var(--psychic-color-card);
+  background: linear-gradient(180deg, rgba(253, 254, 248, 0.701) 23%, rgb(111, 60, 106) 89%);
 }
 
 .ghost {
@@ -621,9 +670,9 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   width: min(90%, 600px);
-  /* border-bottom: 1px solid black; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.503);
   border-radius: 15px 15px 10px 10px;
-  margin-top: 20px;
+  margin: 30px 0;
 }
 
 .specific__pokemon-img {
@@ -676,7 +725,7 @@ body::-webkit-scrollbar-thumb {
 
 .specific__pokemon-types-skills {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -736,14 +785,16 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   text-align: center;
   gap: 10px;
+  margin-top: 15px;
 }
 
 .specific__pokemon-stats-box {
   display: flex;
   gap: 30px;
+  flex-direction: column;
 }
 
-.specific__pokemon-stats-separator-dark, 
+.specific__pokemon-stats-separator-dark,
 .specific__pokemon-stats-separator-light {
   border-radius: 10px;
   display: flex;
@@ -758,6 +809,17 @@ body::-webkit-scrollbar-thumb {
 
 .specific__pokemon-stats-separator-light {
   background-color: var(--light-icons-color);
+}
+
+@media(min-width: 480px) {
+  .specific__pokemon-stats-box {
+    flex-direction: row;
+  }
+
+  .specific__pokemon-stats-separator-dark,
+  .specific__pokemon-stats-separator-light {
+    padding: 20px;
+  }
 }
 
 .footer-light,

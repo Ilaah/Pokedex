@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
-import Header from '../home/Header'
+import Header from '../Shared/Header'
+import Footer from '../Shared/Footer'
 
 const SpecificPokémon = ({ darkMode, toggleVisualMode }) => {
 
@@ -111,7 +112,7 @@ const SpecificPokémon = ({ darkMode, toggleVisualMode }) => {
                     <section className='specific__pokemon-stats'>
                         <h2>Stats</h2>
                         <div className='specific__pokemon-stats-box'>
-                            <div className={ darkMode ? 'specific__pokemon-stats-separator-dark' : 'specific__pokemon-stats-separator-light' }>
+                            <div className={darkMode ? 'specific__pokemon-stats-separator-dark' : 'specific__pokemon-stats-separator-light'}>
                                 <div className='specific__pokemon-stat-box'>
                                     <p>Health Points</p>
                                     <h3 className='specific__pokemon-stat'> {specificPokémon?.stats[0].base_stat} </h3>
@@ -128,7 +129,7 @@ const SpecificPokémon = ({ darkMode, toggleVisualMode }) => {
                                 </div>
                             </div>
 
-                            <div className={ darkMode ? 'specific__pokemon-stats-separator-dark' : 'specific__pokemon-stats-separator-light' }>
+                            <div className={darkMode ? 'specific__pokemon-stats-separator-dark' : 'specific__pokemon-stats-separator-light'}>
                                 <div className='specific__pokemon-stat-box'>
                                     <p>Defense</p>
                                     <h3 className='specific__pokemon-stat'> {specificPokémon?.stats[2].base_stat} </h3>
@@ -149,6 +150,9 @@ const SpecificPokémon = ({ darkMode, toggleVisualMode }) => {
                     </section>
                 </div>
             </section>
+            <Footer 
+            darkMode={darkMode}
+            />
         </article>
     )
 }

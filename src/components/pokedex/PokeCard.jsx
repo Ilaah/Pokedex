@@ -18,16 +18,26 @@ const PokeCard = ({ url, darkMode }) => {
   const filterTypePokemon = () => {
     if (pokemonType === 'poison') { return 'poison' } else {
       if (pokemonType === 'rock') { return 'rock' } else {
-        if (pokemonType === 'ghost') { return 'ghost' } else {
-          if (pokemonType === 'fire') { return 'fire' } else {
-            if (pokemonType === 'water') { return 'water' } else {
-              if (pokemonType === 'grass') { return 'grass' } else {
-                if (pokemonType === 'electric') { return 'electric' } else {
-                  if (pokemonType === 'ice') { return 'ice' } else {
-                    if (pokemonType === 'dark') { return 'dark' } else {
-                      if (pokemonType === 'fairy') { return 'fairy' } else {
-                        if (pokemonType === 'shadow') { return 'shadow' } else {
-                          return 'default'
+        if (pokemonType === 'normal') { return 'normal' } else {
+          if (pokemonType === 'fighting') { return 'fighting' } else
+            if (pokemonType === 'bug') { return 'bug' } else {
+              if (pokemonType === 'steel') { return 'steel' } else {
+                if (pokemonType === 'psychic') { return 'psychic' } else {
+                  if (pokemonType === 'ghost') { return 'ghost' } else {
+                    if (pokemonType === 'fire') { return 'fire' } else {
+                      if (pokemonType === 'water') { return 'water' } else {
+                        if (pokemonType === 'grass') { return 'grass' } else {
+                          if (pokemonType === 'electric') { return 'electric' } else {
+                            if (pokemonType === 'ice') { return 'ice' } else {
+                              if (pokemonType === 'dark') { return 'dark' } else {
+                                if (pokemonType === 'fairy') { return 'fairy' } else {
+                                  if (pokemonType === 'shadow') { return 'shadow' } else {
+                                    return 'default'
+                                  }
+                                }
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -35,7 +45,6 @@ const PokeCard = ({ url, darkMode }) => {
                 }
               }
             }
-          }
         }
       }
     }
@@ -47,14 +56,14 @@ const PokeCard = ({ url, darkMode }) => {
 
 
   return (
-    <article className={`pokecard animate__fadeInLeft ${filterTypePokemon()}`} onClick= {clickCard}>
+    <article className={`pokecard animate__fadeInLeft ${filterTypePokemon()}`} onClick={clickCard}>
       <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="pokemon" className='pokecard__img' />
-      
+
       <div className={darkMode ? 'pokecard__info-dark' : 'pokecard__info-light'}>
         <h2 className={darkMode ? 'pokecard__name-dark' : 'pokecard__name-light'}> {pokemon?.name} </h2>
         <p>Types</p>
-        <h3 className= {darkMode ? 'pokecard__type-dark' : 'pokecard__type-light'} >
-        {pokemonType}  {pokemonType2 ?  '/' + pokemonType2 : null}</h3>
+        <h3 className={darkMode ? 'pokecard__type-dark' : 'pokecard__type-light'} >
+          {pokemonType}  {pokemonType2 ? '/' + pokemonType2 : null}</h3>
 
         <div className={darkMode ? 'pokecard__stats-dark' : 'pokecard__stats-light'}>
           <ul className='pokecard__separator'>

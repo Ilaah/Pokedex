@@ -81,13 +81,13 @@ const PokedexScreen = ({ darkMode, toggleVisualMode }) => {
                 toggleVisualMode={toggleVisualMode}
                 darkMode={darkMode}
             />
+            <h3 className='pokedex__greeting'>Hi trainer {nameUser}, welcome to the pokedex</h3>
+            <p>Here you will find your favorite pokemons</p>
             <Form
                 setPokeSearch={setPokeSearch}
                 typeList={typeList}
                 setFilterType={setFilterType}
             />
-            <h3 className='pokedex__greeting'>Hi trainer {nameUser}, welcome to the pokedex</h3>
-            <p>Here you will find your favorite pokemons</p>
             <Pagination
                 arrayPages={arrayPages}
                 darkMode={darkMode}

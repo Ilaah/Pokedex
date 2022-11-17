@@ -96,7 +96,7 @@ const PokedexScreen = ({ darkMode, toggleVisualMode }) => {
                 quantityPages={quantityPages}
                 pagesPerBlock={pagesPerBlock}
             />
-            <section className='pokecards animate__fadeInLeft'>
+            <section className='pokecards'>
                 {filterPokemon ?
                     filterPokemon?.map(pokemon => (
                         <PokeCard

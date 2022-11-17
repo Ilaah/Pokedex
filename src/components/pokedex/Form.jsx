@@ -12,12 +12,12 @@ const Form = ({setPokeSearch, typeList, setFilterType}) => {
 
   return (
     <form className='inputs__container'>
-        <input 
+        {/* <input 
         className='input__search'
         type="text"
         placeholder='Search your favorite Pokemon'
         onChange={changeInputText}
-        />
+        /> */}
         <select onChange={changeSelect} className= 'input__filter'>
             <option value="All Pokemons" className='input__filter-options'>All Pokemons</option>
             {
